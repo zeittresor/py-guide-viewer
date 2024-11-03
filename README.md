@@ -1,5 +1,6 @@
 # py-guide-viewer
 Extended Amiga Guide File-Viewer in Python
+
 Written by Zeittresor
 
 This is a File Viewer for the Amiga Guide Fileformat (.guide).
