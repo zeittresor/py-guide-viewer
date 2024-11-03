@@ -14,4 +14,8 @@ Features:
 - Extended to play embedded MP3 Music (UUENC Encoded) from the Main Node
 - Support for Emojis in the Text
 
+  Preview:
+  ![grafik](https://github.com/user-attachments/assets/4b081d1c-ff8a-4abd-a068-a57e8508e752)
+
+
 Source: https://github.com/zeittresor/py-guide-viewer
