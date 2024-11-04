@@ -338,17 +338,17 @@ class AmigaGuideViewer:
                     # Decode the uuencoded data
                     try:
                         decoded_data = self.decode_uu_data(f"begin {filename}{uu_data}\nend")
-                        if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
+                        if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp', '.tif', '.tiff', '.webp', '.ppm', '.eps')):
                             # Handle image
                             image = Image.open(io.BytesIO(decoded_data))
                             photo = ImageTk.PhotoImage(image)
                             self.images.append(photo)  # Keep a reference to avoid garbage collection
-
                             # Insert image into the text widget
                             self.text.image_create(tk.END, image=photo)
                             self.text.insert(tk.END, "\n")  # Newline after the image
-                        elif filename.lower().endswith('.mp3'):
-                            # Handle audio
+                            # Insert audio into the text widget (autoplay)
+                        elif filename.lower().endswith(('.mp3', '.ogg', '.wav', '.midi', '.mid')):
+                            # Handle audio 
                             if self.current_node == 'MAIN':
                                 self.play_audio(decoded_data)
                         else:
